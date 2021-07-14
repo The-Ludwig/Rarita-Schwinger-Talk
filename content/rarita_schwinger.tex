@@ -1,19 +1,21 @@
 \section{The Rarita-Schwinger Field}
 \begin{frame}
 	\frametitle{The Spinor of the Rarita-Schwinger Field}
-	Idea: Combine spin 1 $A^\mu$ and the spin $\sfrac{1}{2}$ Dirac Spinor $\Psi$ into $\Psi^\mu$.
+	Idea: Combine spin 1 $A^\mu$ and the spin $\sfrac{1}{2}$ Dirac spinor $\Psi$ into $\Psi^\mu$.
 	It transforms according to the
 	\begin{align*}
 		(\sfrac{1}{2}, \sfrac{1}{2})\otimes\l[(\sfrac{1}{2}, 0)\oplus(0, \sfrac{1}{2})\r] =
 		(\sfrac{1}{2}, 1)\oplus(\sfrac{1}{2}, 0)\oplus(1, \sfrac{1}{2})\oplus(0, \sfrac{1}{2})
 	\end{align*}
+	\pause
 	To eliminate the Dirac component, we require
 	\begin{align*}
 		\gamma_\mu \Psi^\mu = 0
 	\end{align*}
 	which transforms like a Dirac spinor. (Remember: $\gamma_\mu$ does not transform)
 	\pause
-	Rarita-Schwinger-Equation:
+	Rarita-Schwinger-Equation
+	\footnote{Solutions in the RF are in the appendix}:
 	\begin{align*}
 		\l(i\slashed{\partial} - m\r)\Psi^\mu = 0
 	\end{align*}
@@ -28,8 +30,7 @@
 			\l(i\gamma^\nu\partial_\nu - m\r)\Psi^\mu & = 0
 		\end{aligned}
 		\r \rbrace
-		\l(-i\gamma^\nu\partial_\nu\gamma_\mu+2i \partial_\nu g^\mu_\nu - m\gamma_\mu\r)\Psi^\mu
-		\pause
+		\l(-i\gamma^\nu\partial_\nu\gamma_\mu+2i \partial_\nu g_{\ \mu}^\nu - m\gamma_\mu\r)\Psi^\mu
 		= 2i \partial_\mu \Psi^\mu
 		= 0
 		\Rightarrow
@@ -47,42 +48,6 @@
 	\end{equation*}
 \end{frame}
 \begin{frame}
-	\frametitle{Properties of the Rarita-Schwinger equation}
-	Solutions in the Rest-Frame are\footnote{For a general one see: \fullcite{shi2003solution}}:
-	\begin{align*}
-		\Psi^\mu(\sigma)_{\pm} = \sum_{\sigma', \sigma''} CG(\sigma; \sigma',\sigma'') \epsilon^\mu(\sigma') u_\pm(\sigma'') e^{\mp i mt}\quad
-		u_+(\sigma) =
-		\begin{pmatrix}
-			w(\sigma) \\
-			0
-		\end{pmatrix}\quad
-		u_-(\sigma) =
-		\begin{pmatrix}
-			0 \\
-			w(\sigma)
-		\end{pmatrix}                                           \\
-		w(\sigma=\sfrac{1}{2}) = \begin{pmatrix}
-			1 \\
-			0
-		\end{pmatrix}\quad
-		w(\sigma=-\sfrac{1}{2}) = \begin{pmatrix}
-			0 \\
-			1
-		\end{pmatrix}\quad
-		\epsilon^\mu(\sigma=0)=i(0, 0, 0, 1)\quad
-		\epsilon^\mu(\sigma=\pm 1) = \mp \frac{i}{\sqrt 2} (0, 1, \pm i, 0) \\
-	\end{align*}
-	Nonvanishing Clebsch-Gordan coefficents are:
-	\begin{align*}
-		CG(+\sfrac{3}{2}; 1, \sfrac{1}{2}) = 1\qquad
-		CG(-\sfrac{3}{2}; -1, -\sfrac{1}{2}) = 1\quad               \\
-		CG(+\sfrac{1}{2}; 1, -\sfrac{1}{2}) = \sqrt\frac{1}{3}\quad
-		CG(+\sfrac{1}{2}; 0, +\sfrac{1}{2}) = \sqrt\frac{2}{3}\quad \\
-		CG(-\sfrac{1}{2}; -1, +\sfrac{1}{2}) = \sqrt\frac{1}{3}\quad
-		CG(-\sfrac{1}{2}; 0, -\sfrac{1}{2}) = \sqrt\frac{2}{3}\quad
-	\end{align*}
-\end{frame}
-\begin{frame}
 	\frametitle{Lagrangian}
 	\begin{equation*}
 		\symcal{L} = \frac{1}{2}\overline\Psi_\nu\l(-\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\kappa+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
@@ -94,7 +59,10 @@
 	\begin{align*}
 		\frac{\delta \symcal{L}}{\delta \overline\Psi_\nu}=0=
 		\l(-\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\kappa+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
-		= T^\nu                                                                                                                                                                      \\
+		= T^\nu                                                       
+	\end{align*}
+	\pause
+	\begin{align*}
 		\overset{\partial_\nu T^\nu}{\Rightarrow}
 		[\slashed{\partial},\gamma^\lambda]\Psi_\lambda=0 \qquad
 		\overset{\gamma_\nu T^\nu}{\Rightarrow}
@@ -116,7 +84,7 @@
 	\begin{align*}
 		-\frac{1}{2}\gamma^\lambda\gamma^\nu \Psi_\lambda 
 		= -m\Psi^\nu 
-		= - \epsilon^{\mu\nu\kappa\lambda}\gamma_5\gamma_\nu\partial_\kappa \Psi_\lambda
+		= - \epsilon^{\mu\nu\kappa\lambda}\gamma_5\gamma_\mu\partial_\kappa \Psi_\lambda
 		= -i\l(\gamma^\nu\gamma^\kappa\gamma^\lambda-g^{\nu\kappa}\gamma^\lambda-g^{\kappa\lambda}\gamma^\nu+g^{\nu\lambda}\gamma^\kappa\r)\partial_\kappa\Psi_{\lambda}
 		= -i\slashed \partial \Psi^\nu\\
 	\end{align*}
@@ -129,13 +97,13 @@
 	\end{align*}}
 \end{frame}
 \begin{frame}
-	\frametitle{But wait! Why don't we use $(\sfrac{3}{2}, 0)\oplus(0, \sfrac{3}{1})$?}
+	\frametitle{But wait! Why don't we use $(\sfrac{3}{2}, 0)\oplus(0, \sfrac{3}{2})$?}
 	\begin{itemize}
-	\item Weinberg did the calculations in 1964\footnote{\fullcite{weinberg1964feynman}} to get an 8-Spinor.
-	\item \enquote{Intricate} calculations\footnotemark[1]
+	\item Weinberg did the calculations in 1964\footnote{\fullcite{weinberg1964feynman}} to get an 8-Spinor
+	\item \enquote{Intricate} calculations\footnotemark[2]
 		\item Requires a generalised set of $\gamma$-matrices
 	\end{itemize}
-	\footnotetext[1]{Detailed discussion of ATS: \fullcite{pure}}
+	\footnotetext[2]{Detailed discussion of ATS: \fullcite{pure}}
 	\pause 
 	The antisymmetric Tensor-Spinor (ATS) is sometimes used
 	\begin{equation*}
@@ -143,11 +111,11 @@
 		=\l[\l(\sfrac{1}{2}, 0\r)\oplus\l(0,\sfrac{1}{2}\r)\r]\oplus\l[\l(\sfrac{3}{2}, 0\r)\oplus\l(0,\sfrac{3}{2}\r)\r]
 		\oplus\l[\l(\sfrac{1}{2}, 1\r)\oplus\l(1,\sfrac{1}{2}\r)\r]
 	\end{equation*}
-	$\Psi^{\mu\nu}=-\Psi{\nu\mu}$. The unphysical components removed with $\gamma_\mu\Psi^{\mu\nu}=0$.
+	$\Rightarrow\Psi^{\mu\nu}=-\Psi^{\nu\mu}$ and the unphysical components are removed with $\gamma_\mu\Psi^{\mu\nu}=0$.
 	\begin{itemize}
-		\item DOF$=6\times 4-4\times 4=8$
+		\item Degrees of freedom$=6\times 4-4\times 4=8$
 		\item Propagator has also (more on that later) problems in discribing $\Delta$ resonances 
-		\item Detailed discussion: \footnotemark[1]
+		\item Detailed discussion in 2
 	\end{itemize}
 	\vspace{1em}	
 \end{frame}

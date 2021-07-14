@@ -1,7 +1,51 @@
-\section{Backup}
+\section*{Backup}
 \begin{frame}
-	\frametitle{Why does $\gamma_\mu\Psi^\mu$ transform like a dirac spinor.}
-	The Dirac part of the vector-spinor spinor transform like
+	\frametitle{Solutions to the Rarita-Schwinger equation}
+	Solutions in the Rest-Frame are\footnote{For a general one see: \fullcite{shi2003solution}}:
+	\begin{align*}
+		\Psi^\mu(\sigma)_{\pm} = \sum_{\sigma', \sigma''} CG(\sigma; \sigma',\sigma'') \epsilon^\mu(\sigma') u_\pm(\sigma'') e^{\mp i mt}\quad
+	\end{align*}\begin{align*}
+		\footnotesize
+		u_+(\sigma) =
+		\begin{pmatrix}
+			w(\sigma) \\
+			0
+		\end{pmatrix}\quad
+		u_-(\sigma) =
+		\begin{pmatrix}
+			0 \\
+			w(\sigma)
+		\end{pmatrix}\quad                                          
+		w(\sfrac{1}{2}) = \begin{pmatrix}
+			1 \\
+			0
+		\end{pmatrix}\quad
+		w(-\sfrac{1}{2}) = \begin{pmatrix}
+			0 \\
+			1
+		\end{pmatrix}\quad
+		\epsilon^\mu(0)=i
+		\begin{pmatrix}
+			0 \\ 0 \\ 0 \\ 1			
+		\end{pmatrix}\quad
+		\epsilon^\mu(\pm 1) = \mp \frac{i}{\sqrt 2}
+		\begin{pmatrix}
+			0\\ 1\\ \pm i\\ 0
+		\end{pmatrix}
+	\end{align*}
+	Nonvanishing Clebsch-Gordan coefficents are:
+	\begin{align*}
+		CG(+\sfrac{3}{2}; 1, \sfrac{1}{2}) = 1\hspace{5em}
+		CG(-\sfrac{3}{2}; -1, -\sfrac{1}{2}) = 1\quad               \\
+		CG(+\sfrac{1}{2}; 1, -\sfrac{1}{2}) = \sqrt\frac{1}{3}\hspace{5em}
+		CG(+\sfrac{1}{2}; 0, +\sfrac{1}{2}) = \sqrt\frac{2}{3}\quad \\
+		CG(-\sfrac{1}{2}; -1, +\sfrac{1}{2}) = \sqrt\frac{1}{3}\hspace{5em}
+		CG(-\sfrac{1}{2}; 0, -\sfrac{1}{2}) = \sqrt\frac{2}{3}\quad
+	\end{align*}
+\end{frame}
+\begin{frame}
+	\frametitle{Why does $\gamma_\mu\Psi^\mu$ transform like a Dirac spinor?}
+	The Dirac part of the vector-spinor transforms like
 	\begin{equation*}
 		\Psi^{\mu'} = \Lambda^\mu_{\ \nu}M(\Lambda) \Psi^\nu
 	\end{equation*}

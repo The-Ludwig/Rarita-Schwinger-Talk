@@ -15,7 +15,7 @@
 			-\vec x
 		\end{pmatrix}
 		\qquad
-		g_{\mu\nu}=g_{\mu\nu}
+		g_{\mu\nu}
 		= \symup{diag}(1, -1, -1, -1)
 		\qquad
 		\symup{c} = 1
@@ -32,14 +32,12 @@
 		x'^\mu = L(\Lambda, a; x)^\mu = \Lambda^\mu_{\ \nu}x^\nu + a^\mu
 	\end{align}
 	\eqref{eqn:s2} into \eqref{eqn:trans}:
-	\begin{align}
+	\begin{align*}
 		a^\mu \in \symbb{R} \qquad g_{\alpha \beta} = g_{\mu\nu} \Lambda^\mu_{\ \alpha}\Lambda^\nu_{\ \beta}
-	\end{align}
+	\end{align*}
 \end{frame}
 \begin{frame}{The Group Axioms}
-	With physical arguments the group-structure is fulfilled $\rightarrow$ Poincaré  or inhomogeneous Lorentz Group (LG) ($\mathcal L, \circ$)
-
-	Elements $\mathcal L$: Lorentz Transformations $L(\Lambda, a)$. Operation $\circ$: Composition.
+	Lorentz Transformations fulfill the group axioms with $\rightarrow$ Poincaré  or inhomogeneous Lorentz Group (LG)
 
 	\centering
 	\begin{tabular}{l l l}
@@ -54,49 +52,50 @@
 	\frametitle{The Group Structure}
 
 	\begin{tabular}{l l l}
-		Inhomogeneous LG                                                   & $L(\Lambda, a)$                                                                             & Unconnected          \\
-		Space Inversion                                                    & $L(P, 0) = L(\symup{diag}(1, -1, -1, -1), 0)$                                               &                      \\
-		Time Reversal                                                      & $L(T, 0) = L(\symup{diag}(-1, 1, 1, 1), 0)$                                                 &                      \\
-		Homogeneous LG                                                     & $L(\Lambda, 0)$                                                                             & Unconnected subgroup \\
-		Translations                                                       & $L(0, a)$                                                                                   & Connected subgroup   \\
-		Rotations                                                          & $L(\symbf R_4, 0) =  L\l(\begin{pmatrix}
+		Inhomogeneous LG             & $L(\Lambda, a)$                                                                             & Unconnected          \\
+		$\rightarrow$Space Inversion & $L(P, 0) = L(\symup{diag}(1, -1, -1, -1), 0)$                                               &                      \\
+		$\rightarrow$Time Reversal   & $L(T, 0) = L(\symup{diag}(-1, 1, 1, 1), 0)$                                                 &                      \\
+		Homogeneous LG               & $L(\Lambda, 0)$                                                                             & Unconnected subgroup \\
+		Translations                 & $L(0, a)$                                                                                   & Connected subgroup   \\
+		Rotations                    & $L(\symbf R_4, 0) =  L\l(\begin{pmatrix}
 					1      & \vec 0^{\symup{T}}     \\
 					\vec 0 & \symbf{R(\vec \alpha)}
 				\end{pmatrix} , 0\r)\quad \symbf{R} \in \symup{SO(3)}$ & Connected subgroup   \\
-		Boosts                                                             & $L(\symbf B, 0) = L\l(
+		Boosts                       & $L(\symbf B, 0) = L\l(
 			\begin{pmatrix}
-				\gamma         & -\gamma \vec v^{\symup{T}}                                      \\
-				-\gamma \vec v & \symbb{1} + \vec v \vec v^{\symup{T}} \frac{\gamma-1}{\vec v^2}
-			\end{pmatrix}
-		, 0\r) {\footnote{$\gamma = \l(1-\vec v^2\r)^{-\sfrac{1}{2}} $} }$ & Connected subgroup                                                                                                 \\
-		Restricted LG                                                      & $L(\symbf R_4, 0) \cup L(\symbf B, 0)$                                                      & Connected subgroup
+					\gamma         & -\gamma \vec v^{\symup{T}}                                      \\
+					-\gamma \vec v & \symbb{1} + \vec v \vec v^{\symup{T}} \frac{\gamma-1}{\vec v^2}
+				\end{pmatrix}
+		, 0\r)$                      & Connected subgroup                                                                                                 \\
+		Restricted LG                & $L(\symbf R_4, 0) \cup L(\symbf B, 0)$                                                      & Connected subgroup
 	\end{tabular}
 \end{frame}
 \begin{frame}
 	\frametitle{The Lie-Algebra of the restricted LG}
-	Transforamtions close to unity:
-	\begin{align}
+	Transformations close to unity:
+	\begin{align*}
 		\Lambda^{\mu}_{\ \nu} = \delta^{\mu}_{\ \nu} + \omega^{\mu}_{\ \nu}
-	\end{align}
+	\end{align*}
 	$\omega^{\mu}_{\ \nu}$ is infinitesimal.
-	\begin{align}
+	\begin{align*}
 		\Rightarrow g_{\alpha \beta} = g_{\mu\nu} \l(\delta^{\mu}_{\ \alpha} + \omega^{\mu}_{\ \alpha}\r)\l(\delta^{\nu}_{\ \beta} + \omega^{\nu}_{\ \beta}\r)
 		= g_{\alpha\beta}+\omega_{\alpha\beta}+\omega_{\beta\alpha}+\symcal O (\omega^2) \Rightarrow  \omega_{\alpha\beta}= -\omega_{\beta\alpha}
-	\end{align}
+	\end{align*}
+	\pause
 	Let $\symbf M(\Lambda)$ be a representation of the restricted LG: $\symbf M(\Lambda)\symbf M(\Lambda')=\symbf M(\Lambda\Lambda')$
-	\begin{align}
+	\begin{align*}
 		\symbf M (1+\omega) = \symbf 1 + \frac{1}{2} i\omega_{\mu\nu} \symbf J^{\mu\nu} + \symcal O (\omega^2)
-	\end{align}
+	\end{align*}
 	Choose $\symbf J^{\mu\nu}=-\symbf J^{\nu\mu}$
-	\begin{align}
+	\begin{align*}
 		\symup M(\Lambda)\symup M(1+\omega)\symup M(\Lambda)^{-1}
 		= \symup M(\Lambda (1+\omega)\Lambda^{-1}) \\
-		\dots \Rightarrow i[\symbf J^{\mu\nu}, \symbf J^{\rho\sigma}] = g^{\nu\rho}\symbf J^{\mu\sigma} - g^{\mu\rho} \symbf J^{\nu\sigma} - g^{\sigma\mu} \symbf J^{\sigma\nu} + g^{\sigma\nu} \symbf J^{\rho\mu}
-	\end{align}
+		\dots \Rightarrow i[\symbf J^{\mu\nu}, \symbf J^{\rho\sigma}] = g^{\nu\rho}\symbf J^{\mu\sigma} - g^{\mu\rho} \symbf J^{\nu\sigma} - g^{\sigma\mu} \symbf J^{\rho\nu} + g^{\sigma\nu} \symbf J^{\rho\mu}
+	\end{align*}
 \end{frame}
 \begin{frame}
 	\frametitle{Representation of the restricted LG}
-	Since $\symbf J^{\mu\nu}= -\symbf J^{\nu\mu}$, it has 6 independend components. We choose:
+	Since $\symbf J^{\mu\nu}= -\symbf J^{\nu\mu}$, it has 6 independent components. We choose:
 	\begin{align*}
 		\symbf{\vec J} = (\symbf J^{23},\symbf J^{31},\symbf J^{12}) & \qquad \symbf{\vec K} = (\symbf J^{01},\symbf J^{02},\symbf J^{03}) \\
 		\Rightarrow [\symbf J_i,\symbf J_j]                          & = i \epsilon_{ijk} \symbf J_k                                       \\
@@ -112,14 +111,14 @@
 \end{frame}
 \begin{frame}
 	\frametitle{$(A, B)$ representation of the restricted LG}
-	The restricted Lorentz group can be written as  $L = \symup{SO}(3)_l \oplus \symup{SO}(3)_r$
-	We find matrices satisfying the $\symbf{\vec A}^\pm$ algebra with the standard spin matrices:
+	The restricted Lorentz group can be written as  $L = \symup{SO}(3)_l \oplus \symup{SO}(3)_r$.
+	\\We find matrices satisfying the $\symbf{\vec A}^\pm$ algebra with the standard spin matrices:
 	\begin{align*}
 		\l(\symbf{A_3}^+\r)_{aa'}                   & = a \delta_{aa'}                               \\
 		\l(\symbf{A_1}^+\pm i\symbf{A_2}^+\r)_{aa'} & = \delta_{a',a\pm1} \sqrt{(A\mp a)(A\pm a +1)} \\
 		a                                           & = -A, -A+1, \dots, +A
 	\end{align*}
-	Likewise for $\symbf{\vec A}^-$ only wiht $B$ and $b$ $\Rightarrow\ (A, B)$ representation of the restricted Lorentz group
+	Likewise for $\symbf{\vec A}^-$ only with $B$ and $b$ $\Rightarrow\ (A, B)$ representation of the restricted Lorentz group
 	\pause
 	Since $\symbf{\vec J}=\symbf{\vec A}^++\symbf{\vec A}^-$, Fields transforming under the $(A, B)$ representation have components with spin
 	\begin{align*}
@@ -127,14 +126,14 @@
 	\end{align*}
 \end{frame}
 \begin{frame}
-	\frametitle{Examples of the $(A, B)$ representation}
+	\frametitle{Examples of representations}
 	\begin{tabular}{l l l}
-		$(0, 0)$                                         & Skalar                             & Boson                              \\
-		$(\sfrac{1}{2}, 0)/(0, \sfrac{1}{2})$            & Lefthanded/Righthanded Weyl Spinor & Massless fermion                   \\
-		$(\sfrac{1}{2}, \sfrac{1}{2})$                   & Vector                             & Boson                             \\
-		$\bigotimes_{i=1}^N(\sfrac{1}{2}, \sfrac{1}{2})$ & $N$-Rank Tensor                    &                                    \\
-		$(\sfrac{1}{2}, 0)\oplus(0, \sfrac{1}{2})$       & Dirac Bispinor                     & Fermions                           \\
-		$(\sfrac{1}{2}, 1)\oplus(1, \sfrac{1}{2})$       & Rarita Schwinger Field             & Gravitino                           \\
-		$(2, 0)\oplus (0, 2)$                            & Spin 2 Spinor                      & Graviton / Rieman Curvature Tensor \\
+		$(0, 0)$                                         & Scalar                        & Boson                              \\
+		$(\sfrac{1}{2}, 0)\text{ and }(0, \sfrac{1}{2})$ & Lefthanded and RH Weyl Spinor & Massless fermion                   \\
+		$(\sfrac{1}{2}, \sfrac{1}{2})$                   & Vector                        & Boson                              \\
+		$\bigotimes_{i=1}^N(\sfrac{1}{2}, \sfrac{1}{2})$ & $N$-Rank Tensor               &                                    \\
+		$(\sfrac{1}{2}, 0)\oplus(0, \sfrac{1}{2})$       & Dirac Bispinor                & Fermions                           \\
+		$(\sfrac{1}{2}, 1)\oplus(1, \sfrac{1}{2})$       & Rarita Schwinger Field        & Gravitino                          \\
+		$(2, 0)\oplus (0, 2)$                            & Spin 2 Spinor                 & Graviton / Rieman Curvature Tensor \\
 	\end{tabular}
 \end{frame}
