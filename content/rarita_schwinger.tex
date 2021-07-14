@@ -85,7 +85,7 @@
 \begin{frame}
 	\frametitle{Lagrangian}
 	\begin{equation*}
-		\symcal{L} = \frac{1}{2}\overline\Psi_\nu\l(-i\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\lambda+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
+		\symcal{L} = \frac{1}{2}\overline\Psi_\nu\l(-\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\kappa+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
 		\text{\footnotemark[1]}
 	\end{equation*}
 	\footnotetext[1]{Full derivation:\fullcite[334]{weinberg2005quantum}}
@@ -93,12 +93,61 @@
 	Getting back the field equations:
 	\begin{align*}
 		\frac{\delta \symcal{L}}{\delta \overline\Psi_\nu}=0=
-		\l(-i\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\lambda+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
-		= T^\nu\\
+		\l(-\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\kappa+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
+		= T^\nu                                                                                                                                                                      \\
 		\overset{\partial_\nu T^\nu}{\Rightarrow}
-		[\slashed{\partial},\gamma^\lambda]\Psi_\gamma=0 \qquad 
+		[\slashed{\partial},\gamma^\lambda]\Psi_\lambda=0 \qquad
 		\overset{\gamma_\nu T^\nu}{\Rightarrow}
-		3m\gamma^\lambda \Psi_\lambda = i\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\nu\gamma_\mu\partial_\kappa\Psi_\lambda = -[\slashed \partial, \gamma^\lambda]\Psi_\lambda = 0\\
+		3m\gamma^\lambda \Psi_\lambda = \epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\nu\gamma_\mu\partial_\kappa\Psi_\lambda = i[\slashed \partial, \gamma^\lambda]\Psi_\lambda = 0 \\
 		\Rightarrow \partial_{\lambda}\Psi^\lambda = \frac{1}{2}\l\{\slashed \partial, \gamma_\lambda \r\} \Psi^\lambda = \frac{1}{2}[\slashed \partial, \gamma_\lambda]\Psi^\lambda = 0
 	\end{align*}
+	Using
+	\begin{equation*}
+		\gamma^\mu\gamma^\nu\gamma^\rho = \eta^{\mu\nu}\gamma^\rho + \eta^{\nu\rho}\gamma^\mu - \eta^{\mu\rho}\gamma^\nu - i\epsilon^{\sigma\mu\nu\rho}\gamma_\sigma\gamma^5
+	\end{equation*}
+\end{frame}
+\begin{frame}
+	\frametitle{Lagrangian}
+	\begin{align*}
+	    0 =	\l(-\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\lambda+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda \\
+		\gamma_\lambda\Psi^\lambda = 0 \qquad \partial_\lambda\Psi^\lambda = 0\\
+	\end{align*}
+	\pause 
+	\begin{align*}
+		-\frac{1}{2}\gamma^\lambda\gamma^\nu \Psi_\lambda 
+		= -m\Psi^\nu 
+		= - \epsilon^{\mu\nu\kappa\lambda}\gamma_5\gamma_\nu\partial_\kappa \Psi_\lambda
+		= -i\l(\gamma^\nu\gamma^\kappa\gamma^\lambda-g^{\nu\kappa}\gamma^\lambda-g^{\kappa\lambda}\gamma^\nu+g^{\nu\lambda}\gamma^\kappa\r)\partial_\kappa\Psi_{\lambda}
+		= -i\slashed \partial \Psi^\nu\\
+	\end{align*}
+	\pause
+	\centering
+	\alert{
+	With this lagrangian we arrive at the correct field equations:
+	\begin{align*}
+		\Rightarrow (i\slashed \partial-m)\Psi^\nu = 0
+	\end{align*}}
+\end{frame}
+\begin{frame}
+	\frametitle{But wait! Why don't we use $(\sfrac{3}{2}, 0)\oplus(0, \sfrac{3}{1})$?}
+	\begin{itemize}
+	\item Weinberg did the calculations in 1964\footnote{\fullcite{weinberg1964feynman}} to get an 8-Spinor.
+	\item \enquote{Intricate} calculations\footnotemark[1]
+		\item Requires a generalised set of $\gamma$-matrices
+	\end{itemize}
+	\footnotetext[1]{Detailed discussion of ATS: \fullcite{pure}}
+	\pause 
+	The antisymmetric Tensor-Spinor (ATS) is sometimes used
+	\begin{equation*}
+		\l[\l(1, 0\r)\oplus\l(0,1\r)\r]\otimes\l[\l(\sfrac{1}{2}, 0\r)\oplus\l(0,\sfrac{1}{2}\r)\r]
+		=\l[\l(\sfrac{1}{2}, 0\r)\oplus\l(0,\sfrac{1}{2}\r)\r]\oplus\l[\l(\sfrac{3}{2}, 0\r)\oplus\l(0,\sfrac{3}{2}\r)\r]
+		\oplus\l[\l(\sfrac{1}{2}, 1\r)\oplus\l(1,\sfrac{1}{2}\r)\r]
+	\end{equation*}
+	$\Psi^{\mu\nu}=-\Psi{\nu\mu}$. The unphysical components removed with $\gamma_\mu\Psi^{\mu\nu}=0$.
+	\begin{itemize}
+		\item DOF$=6\times 4-4\times 4=8$
+		\item Propagator has also (more on that later) problems in discribing $\Delta$ resonances 
+		\item Detailed discussion: \footnotemark[1]
+	\end{itemize}
+	\vspace{1em}	
 \end{frame}
