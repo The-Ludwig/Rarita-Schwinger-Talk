@@ -1,0 +1,104 @@
+\section{The Rarita-Schwinger Field}
+\begin{frame}
+	\frametitle{The Spinor of the Rarita-Schwinger Field}
+	Idea: Combine spin 1 $A^\mu$ and the spin $\sfrac{1}{2}$ Dirac Spinor $\Psi$ into $\Psi^\mu$.
+	It transforms according to the
+	\begin{align*}
+		(\sfrac{1}{2}, \sfrac{1}{2})\otimes\l[(\sfrac{1}{2}, 0)\oplus(0, \sfrac{1}{2})\r] =
+		(\sfrac{1}{2}, 1)\oplus(\sfrac{1}{2}, 0)\oplus(1, \sfrac{1}{2})\oplus(0, \sfrac{1}{2})
+	\end{align*}
+	To eliminate the Dirac component, we require
+	\begin{align*}
+		\gamma_\mu \Psi^\mu = 0
+	\end{align*}
+	which transforms like a Dirac spinor. (Remember: $\gamma_\mu$ does not transform)
+	\pause
+	Rarita-Schwinger-Equation:
+	\begin{align*}
+		\l(i\slashed{\partial} - m\r)\Psi^\mu = 0
+	\end{align*}
+\end{frame}
+\begin{frame}
+	\frametitle{Properties of the Rarita-Schwinger equation}
+	Using $\{\gamma^\mu, \gamma^\nu\}_+=2g^{\mu\nu}\symbb{1}_4$:
+	\begin{equation*}
+		\l .
+		\begin{aligned}
+			\gamma_\mu \Psi^\mu                       & = 0 \\
+			\l(i\gamma^\nu\partial_\nu - m\r)\Psi^\mu & = 0
+		\end{aligned}
+		\r \rbrace
+		\l(-i\gamma^\nu\partial_\nu\gamma_\mu+2i \partial_\nu g^\mu_\nu - m\gamma_\mu\r)\Psi^\mu
+		\pause
+		= 2i \partial_\mu \Psi^\mu
+		= 0
+		\Rightarrow
+		\quad\partial_\mu \Psi^\mu = 0
+	\end{equation*}
+	\pause
+	These equations impose each 4 conditions on the RS-Spinor giving
+	\begin{equation*}
+		4\times4-2\times4 = 16-8 = 8 \text{ degrees of freedom }=
+		\l \lbrace
+		\begin{aligned}
+			\text{Particle: } s     & =-\sfrac{3}{2},-\sfrac{1}{2},\sfrac{1}{2},\sfrac{3}{2} \\
+			\text{Antiparticle: } s & =-\sfrac{3}{2},-\sfrac{1}{2},\sfrac{1}{2},\sfrac{3}{2}
+		\end{aligned}\r .
+	\end{equation*}
+\end{frame}
+\begin{frame}
+	\frametitle{Properties of the Rarita-Schwinger equation}
+	Solutions in the Rest-Frame are\footnote{For a general one see: \fullcite{shi2003solution}}:
+	\begin{align*}
+		\Psi^\mu(\sigma)_{\pm} = \sum_{\sigma', \sigma''} CG(\sigma; \sigma',\sigma'') \epsilon^\mu(\sigma') u_\pm(\sigma'') e^{\mp i mt}\quad
+		u_+(\sigma) =
+		\begin{pmatrix}
+			w(\sigma) \\
+			0
+		\end{pmatrix}\quad
+		u_-(\sigma) =
+		\begin{pmatrix}
+			0 \\
+			w(\sigma)
+		\end{pmatrix}                                           \\
+		w(\sigma=\sfrac{1}{2}) = \begin{pmatrix}
+			1 \\
+			0
+		\end{pmatrix}\quad
+		w(\sigma=-\sfrac{1}{2}) = \begin{pmatrix}
+			0 \\
+			1
+		\end{pmatrix}\quad
+		\epsilon^\mu(\sigma=0)=i(0, 0, 0, 1)\quad
+		\epsilon^\mu(\sigma=\pm 1) = \mp \frac{i}{\sqrt 2} (0, 1, \pm i, 0) \\
+	\end{align*}
+	Nonvanishing Clebsch-Gordan coefficents are:
+	\begin{align*}
+		CG(+\sfrac{3}{2}; 1, \sfrac{1}{2}) = 1\qquad
+		CG(-\sfrac{3}{2}; -1, -\sfrac{1}{2}) = 1\quad               \\
+		CG(+\sfrac{1}{2}; 1, -\sfrac{1}{2}) = \sqrt\frac{1}{3}\quad
+		CG(+\sfrac{1}{2}; 0, +\sfrac{1}{2}) = \sqrt\frac{2}{3}\quad \\
+		CG(-\sfrac{1}{2}; -1, +\sfrac{1}{2}) = \sqrt\frac{1}{3}\quad
+		CG(-\sfrac{1}{2}; 0, -\sfrac{1}{2}) = \sqrt\frac{2}{3}\quad
+	\end{align*}
+\end{frame}
+\begin{frame}
+	\frametitle{Lagrangian}
+	\begin{equation*}
+		\symcal{L} = \frac{1}{2}\overline\Psi_\nu\l(-i\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\lambda+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
+		\text{\footnotemark[1]}
+	\end{equation*}
+	\footnotetext[1]{Full derivation:\fullcite[334]{weinberg2005quantum}}
+	\pause
+	Getting back the field equations:
+	\begin{align*}
+		\frac{\delta \symcal{L}}{\delta \overline\Psi_\nu}=0=
+		\l(-i\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\mu\partial_\lambda+\frac{1}{2}m[\gamma^\nu, \gamma^\lambda]\r)\Psi_\lambda
+		= T^\nu\\
+		\overset{\partial_\nu T^\nu}{\Rightarrow}
+		[\slashed{\partial},\gamma^\lambda]\Psi_\gamma=0 \qquad 
+		\overset{\gamma_\nu T^\nu}{\Rightarrow}
+		3m\gamma^\lambda \Psi_\lambda = i\epsilon^{\nu\mu\kappa\lambda}\gamma_5\gamma_\nu\gamma_\mu\partial_\kappa\Psi_\lambda = -[\slashed \partial, \gamma^\lambda]\Psi_\lambda = 0\\
+		\Rightarrow \partial_{\lambda}\Psi^\lambda = \frac{1}{2}\l\{\slashed \partial, \gamma_\lambda \r\} \Psi^\lambda = \frac{1}{2}[\slashed \partial, \gamma_\lambda]\Psi^\lambda = 0
+	\end{align*}
+\end{frame}
