@@ -26,9 +26,7 @@ jobs:
             apk add make
             make
       - name: Rename output
-        run: |
-          ls -la
-          mv build/main.pdf ${{ github.event.repository.name }}.pdf
+        run: cp build/main.pdf ${{ github.event.repository.name }}.pdf
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
