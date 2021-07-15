@@ -12,8 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: xu-cheng/texlive-action/full@v1
+      - name: Build PDF file
+        uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
             apk add make
             make
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v2
+        with:
+          name: rarita-schwinger.pdf
+          path: |
+            build/main.pdf
