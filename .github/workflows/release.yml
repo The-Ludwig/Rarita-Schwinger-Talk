@@ -1,0 +1,37 @@
+name: Release PDF
+
+on:
+  push:
+    branches: [ main ]
+    tags: "v*"
+  pull_request:
+    branches: [ main ]
+    tags: "v*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+    
+  release:
+    name: "Tagged Release"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build LaTeX
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            apk add make
+            make
+      - name: Rename output
+        run: mv build/main.pdf ${{ github.event.repository.name }}.pdf
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            LICENSE
+            ${{ github.event.repository.name }}.pdf
+
