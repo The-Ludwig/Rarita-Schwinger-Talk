@@ -2,17 +2,17 @@ name: Release PDF
 
 on:
   push:
-    branches: [ main ]
-    tags: "v*"
+    branches: 
+      - main
+    tags: 
+      - v*
   pull_request:
-    branches: [ main ]
-    tags: "v*"
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-  
+    branches:
+      - main
+    tags: 
+      - v*
 jobs:
-    
+
   release:
     name: "Tagged Release"
     runs-on: ubuntu-latest
